@@ -41,7 +41,7 @@
     ../../modules/programs/media/mpv
     ../../modules/programs/misc/tlp
     ../../modules/programs/misc/thunar
-    # ../../modules/programs/misc/nix-ld
+    ../../modules/programs/misc/nix-ld
     # ../../modules/programs/misc/virt-manager
   ];
 
