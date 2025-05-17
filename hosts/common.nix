@@ -72,6 +72,14 @@
         ripgrep
         tldr
         unzip
+
+        #TODO: Find a better way to make neovim config work globally
+        # Compilers for neovim
+        gcc14
+        libclang
+        cmake
+        nodejs
+        python314
         (pkgs.writeShellScriptBin "hello" ''
           echo "Hello ${username}!"
         '')

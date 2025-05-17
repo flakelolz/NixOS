@@ -17,6 +17,7 @@
     ./programs/hyprlock
     ./programs/swaync
     # ./programs/dunst
+    ../../programs/misc/thunar
   ];
 
   nix.settings = {
@@ -137,7 +138,7 @@
 
             follow_mouse = 1;
 
-            touchpad.natural_scroll = false;
+            touchpad.natural_scroll = true;
 
             tablet.output = "current";
 
