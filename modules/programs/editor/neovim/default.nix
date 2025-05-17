@@ -1,6 +1,9 @@
 {...}: {
   home-manager.sharedModules = [
     (_: {
+      home.shellAliases = {
+        vi = "nvim";
+      };
       programs.neovim.enable = true;
       home.file.".config/nvim" = {
         source = builtins.fetchGit {
