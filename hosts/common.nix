@@ -75,6 +75,8 @@
 
         #TODO: Find a better way to make neovim config work globally
         # Compilers for neovim
+        rustc
+        cargo
         gcc14
         libclang
         cmake
