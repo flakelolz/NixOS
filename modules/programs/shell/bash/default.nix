@@ -1,6 +1,9 @@
 {pkgs, ...}: {
   programs.bash = {
     promptInit = ''
+      if [ -t 1 ]; then
+        exec zsh
+      fi
       if command -v starship; then
         eval "$(starship init bash)"
       fi
