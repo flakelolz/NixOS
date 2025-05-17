@@ -8,7 +8,7 @@
       home.file.".config/nvim" = {
         source = builtins.fetchGit {
           url = "https://github.com/flakelolz/nvim.git";
-          rev = "167303d78c4536123e32b9a0c9b0a519e74af1ad";
+          rev = "4e65c9cb649d3cabf315689a0daaec422d3d606c";
         };
         recursive = true;
       };
