@@ -47,7 +47,7 @@
     inherit (self) outputs;
     settings = {
       # User configuration
-      username = "flakelol"; # automatically set with install.sh and live-install.sh
+      username = "flakelolz"; # automatically set with install.sh and live-install.sh
       editor = "neovim"; # nixvim, vscode, nvchad, neovim, emacs (WIP)
       browser = "zen"; # firefox, floorp, zen
       terminal = "kitty"; # kitty, alacritty, wezterm
