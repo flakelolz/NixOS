@@ -242,6 +242,9 @@
             new_on_top = true;
             mfact = 0.5;
           };
+          windowrulev2 = [
+            "float,center,class:^(bevy.app)$"
+          ];
           windowrule = [
             #"noanim, class:^(Rofi)$
             "tile,title:(.*)(Godot)(.*)$"
