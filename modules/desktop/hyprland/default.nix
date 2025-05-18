@@ -367,6 +367,7 @@
 
               # Applications/Programs
               "$mainMod, Return, exec, $term"
+              "$mainMod SHIFT, Return, exec, $term -e tmux attach-session"
               "$mainMod, T, exec, $term"
               "$mainMod, E, exec, $fileManager"
               "$mainMod, C, exec, $editor"
