@@ -9,7 +9,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, rust-overlay, }:
+  outputs = { self, nixpkgs, rust-overlay }:
     let
       supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems ( system: f {
@@ -17,23 +17,11 @@
           inherit system;
           overlays = [ rust-overlay.overlays.default self.overlays.default ];
         };
-      }
-      );
+      });
     in
       {
       overlays.default = final: prev: {
-        rustToolchain =
-          let
-            rust = prev.rust-bin;
-          in
-            if builtins.pathExists ./rust-toolchain.toml then
-            rust.fromRustupToolchainFile ./rust-toolchain.toml
-          else if builtins.pathExists ./rust-toolchain then
-            rust.fromRustupToolchainFile ./rust-toolchain
-          else
-            rust.stable.latest.default.override {
-              extensions = [ "rust-src" "rustfmt" ];
-            };
+        rustToolchain = final.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
       };
 
       devShells = forEachSupportedSystem ( { pkgs }:
@@ -47,6 +35,8 @@
               cargo-edit
               cargo-watch
               rust-analyzer
+              clang
+              mold
             ];
 
             env = {
@@ -64,6 +54,12 @@
               libxkbcommon wayland # To use the wayland feature
             ];
             LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath buildInputs;
+
+            shellHook = ''
+              export CC=clang
+              export CXX=clang++
+              export RUSTFLAGS="-Clinker=clang -Clink-arg=-fuse-ld=mold"
+            '';
           };
         }
       );
