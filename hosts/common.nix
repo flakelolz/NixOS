@@ -82,6 +82,7 @@
         cmake
         nodejs
         python314
+        nixfmt-rfc-style
         (pkgs.writeShellScriptBin "hello" ''
           echo "Hello ${username}!"
         '')
@@ -108,9 +109,10 @@
     loader = {
       efi.canTouchEfiVariables = true;
       efi.efiSysMountPoint = "/boot";
-      timeout = null; # Display bootloader indefinitely until user selects OS
+      timeout = 20;
       grub = {
         enable = true;
+        default = "saved";
         device = "nodev";
         efiSupport = true;
         useOSProber = true;
@@ -183,7 +185,14 @@
     # Configure network proxy if necessary
     # networking.proxy.default = "http://user:password@proxy:port/";
     # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+    networkmanager.wifi.powersave = false;
+    networkmanager.unmanaged = [
+      "interface-name:lo"
+    ];
   };
+
+  # Trying to fix wifi issues
+  hardware.enableRedistributableFirmware = true;
 
   # Enable sddm login manager
   services.displayManager = {
