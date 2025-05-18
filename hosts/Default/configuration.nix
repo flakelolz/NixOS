@@ -29,6 +29,7 @@
     ../../modules/programs/cli/tmux
     ../../modules/programs/cli/direnv
     ../../modules/programs/cli/lazygit
+    ../../modules/programs/cli/zoxide
     ../../modules/programs/cli/cava
     ../../modules/programs/cli/btop
     ../../modules/programs/shell/bash

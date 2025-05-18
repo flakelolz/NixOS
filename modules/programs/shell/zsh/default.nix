@@ -31,7 +31,8 @@
           plugins = [
             "git"
             "gitignore"
-            "z"
+            # "z"
+            "zoxide"
           ];
         };
         initContent = ''
