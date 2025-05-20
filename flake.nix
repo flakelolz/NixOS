@@ -60,8 +60,8 @@
       hostname = "NixOS"; # CHOOSE A HOSTNAME HERE
       locale = "en_US.UTF-8"; # CHOOSE YOUR LOCALE
       timezone = "America/Santo_Domingo"; # CHOOSE YOUR TIMEZONE
-      kbdLayout = "us"; # CHOOSE YOUR KEYBOARD LAYOUT
-      kbdVariant = ""; # CHOOSE YOUR KEYBOARD VARIANT (Can leave empty)
+      kbdLayout = "us, us"; # CHOOSE YOUR KEYBOARD LAYOUT
+      kbdVariant = ",intl"; # CHOOSE YOUR KEYBOARD VARIANT (Can leave empty)
       consoleKeymap = "us"; # CHOOSE YOUR CONSOLE KEYMAP (Affects the tty?)
     };
 
