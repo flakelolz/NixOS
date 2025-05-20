@@ -34,7 +34,7 @@
     ../../modules/programs/cli/btop
     ../../modules/programs/shell/bash
     ../../modules/programs/shell/zsh
-    ../../modules/programs/media/discord
+    # ../../modules/programs/media/discord
     ../../modules/programs/media/spicetify
     # ../../modules/programs/media/youtube-music
     # ../../modules/programs/media/thunderbird
@@ -43,7 +43,7 @@
     ../../modules/programs/misc/tlp
     ../../modules/programs/misc/thunar
     ../../modules/programs/misc/nix-ld
-    # ../../modules/programs/misc/virt-manager
+     ../../modules/programs/misc/virt-manager
   ];
 
   # Home-manager config
@@ -54,6 +54,8 @@
         krita
         github-desktop
         # gimp
+        aseprite
+        discord
       ];
     })
   ];
