@@ -1,0 +1,5 @@
+{...}: {
+  programs.aseprite = {
+    enable = true;
+  };
+}

@@ -244,6 +244,11 @@
           };
           windowrulev2 = [
             "float,center,class:^(bevy.app)$"
+            "float,title:^(Picture-in-Picture)$"
+            "pin, title:^(Picture-in-Picture)$"
+            "move 71.45% 71.05%, title:^(Picture-in-Picture)$"
+            "size 28% 28%, title:^(Picture-in-Picture)$"
+            "rounding 0, title:^(Picture-in-Picture)$"
           ];
           windowrule = [
             #"noanim, class:^(Rofi)$

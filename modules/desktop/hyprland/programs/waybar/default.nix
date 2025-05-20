@@ -25,7 +25,7 @@
 
             modules-left = ["hyprland/workspaces" "cava"];
             # modules-center = ["clock" "custom/notification"];
-            modules-center = ["idle_inhibitor" "clock"];
+            modules-center = ["idle_inhibitor" "clock" "custom/notification"];
             modules-right = ["custom/gpuinfo" "cpu" "memory" "backlight" "pulseaudio" "bluetooth" "network" "tray" "battery"];
 
             "custom/notification" = {
@@ -161,7 +161,8 @@
                 on-click-right = "mode";
                 format = {
                   months = "<span color='#ffead3'><b>{}</b></span>";
-                  weekdays = "<span color='#ffcc66'><b>{}</b></span>";
+                  # weekdays = "<span color='#ffcc66'><b>{}</b></span>";
+                  weekdays = "<span color='#179299'><b>{}</b></span>";
                   today = "<span color='#ff6699'><b>{}</b></span>";
                 };
               };
@@ -457,7 +458,7 @@
           }
 
           #clock {
-            color: @yellow;
+            color: @sky;
           }
 
           #custom-icon {
