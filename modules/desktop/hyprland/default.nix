@@ -146,6 +146,9 @@
             sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
             # force_no_accel = true;
           };
+          cursor = {
+            no_warps = true;
+          };
           general = {
             gaps_in = 4;
             gaps_out = 9;
