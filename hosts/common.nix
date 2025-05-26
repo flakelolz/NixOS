@@ -60,6 +60,8 @@
       home.packages = with pkgs; [
         # Applications
         #kate
+        stremio
+        obsidian
 
         # Terminal
         fzf
@@ -247,6 +249,8 @@
   fonts.packages = with pkgs.nerd-fonts; [
     jetbrains-mono
     fira-code
+    symbols-only
+    caskaydia-cove
   ];
 
   nixpkgs = {
@@ -283,6 +287,13 @@
     # devenv
     # devbox
     # shellify
+
+    corefonts
+    inter
+    noto-fonts
+    noto-fonts-extra
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
