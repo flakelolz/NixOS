@@ -1,17 +1,19 @@
-{...}: {
-  home-manager.sharedModules = [
-    (_: {
-      home.shellAliases = {
-        vi = "nvim";
-      };
-      programs.neovim.enable = true;
-      home.file.".config/nvim" = {
-        source = builtins.fetchGit {
-          url = "https://github.com/flakelolz/nvim.git";
-          rev = "4e65c9cb649d3cabf315689a0daaec422d3d606c";
+{ inputs, ... }:
+{ home-manager.sharedModules = [
+    ({ pkgs, lib, config, ... }:
+      {
+        home.shellAliases = {
+          vi = "nvim";
         };
-        recursive = true;
-      };
-    })
+        programs.neovim.enable = true;
+
+        home.activation.copyNeovimConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+          echo "Copying Neovim config..."
+          rm -rf ~/.config/nvim
+          cp -r ${inputs.nvim-config.configDir} ~/.config/nvim
+          chmod -R u+rw ~/.config/nvim
+        '';
+      }
+    )
   ];
 }
